@@ -1,4 +1,6 @@
-# vue-jquery-ui
+# Example how to use jQuery UI in Vue TypeScript Project.
+
+ブログ記事「[Vue.js x TypeScriptのプロジェクトでjQuery UIを使う](https://blog.hrendoh.com/using-jquery-ui-in-vue-typescript-project/)」の説明用サンプルです。
 
 ## Project setup
 ```
