@@ -1,20 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div id="app" class="position-relative">
+    <button class="float-center" v-on:click="addBox">Add BOX</button>
+    <Box
+      v-for="box in boxes"
+      :key="box.id"
+      :id="box.id"
+      :x="box.x"
+      :y="box.y"
+    ></Box>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import Box from "./components/Box.vue";
+
+type box = {
+  id: string;
+  x: number;
+  y: number;
+};
 
 @Component({
   components: {
-    HelloWorld
+    Box
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  boxes: box[] = [];
+  addBox() {
+    this.boxes.push({
+      id: Math.random() + "",
+      x: 10,
+      y: 10
+    });
+  }
+}
 </script>
 
 <style>
@@ -24,6 +45,5 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

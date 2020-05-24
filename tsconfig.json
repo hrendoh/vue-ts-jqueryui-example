@@ -17,6 +17,9 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "jquery-ui": [
+        "node_modules/@types/jqueryui/index"
       ]
     },
     "lib": [
